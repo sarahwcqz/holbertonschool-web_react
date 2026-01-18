@@ -63,15 +63,15 @@ console.log(createEmployee('$500'));
 
 // ------------------- TASK 6 ---------------------
 function isDirector(employee: Teacher | Director): employee is Director {
-  return (employee as Director).workDirectorTasks !== undefined;
+    return (employee as Director).workDirectorTasks !== undefined;
 }
 
 function executeWork(employee: Teacher | Director) {
-  if (isDirector(employee)) {
-    return employee.workDirectorTasks();
-  } else {
-    return employee.workTeacherTasks();
-  }
+    if (isDirector(employee)) {
+        return employee.workDirectorTasks();
+    } else {
+        return employee.workTeacherTasks();
+    }
 }
 
 // To help you correct bru
@@ -86,3 +86,19 @@ console.log(executeWork(emp2));
 
 
 // ----------------- TASK 7 --------------
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+    if (todayClass === 'Math') {
+        return 'Teaching Math';
+    }
+    return 'Teaching History';
+}
+
+// To help you correct bru
+console.log('task 7');
+console.log('math?');
+console.log(teachClass('Math'));
+console.log('history?');
+console.log(teachClass('History'));
+
