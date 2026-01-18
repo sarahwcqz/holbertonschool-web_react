@@ -51,4 +51,45 @@ const printTeacher: printTeacherFunction = (firstName, lastName) => {
 console.log("task 3");
 console.log(printTeacher('Marie', 'Curie'));
 
-// 
+
+
+// ----------------- TASK 4 ----------------
+interface StudentConstructor {
+  firstName: string;
+  lastName: string;
+}
+
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClassInterface {
+  firstName: string;
+  lastName: string;
+
+  constructor({ firstName, lastName }: StudentConstructor) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return 'Currently working';
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
+}
+
+
+// To help you correct bru
+const student = new StudentClass({
+  firstName: 'Sabrina',
+  lastName: 'Pasterski',
+});
+
+console.log("task 4");
+console.log(student);
+console.log(student.displayName());
+console.log(student.workOnHomework());
