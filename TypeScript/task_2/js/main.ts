@@ -62,4 +62,27 @@ console.log(createEmployee('$500'));
 
 
 // ------------------- TASK 6 ---------------------
+function isDirector(employee: Teacher | Director): employee is Director {
+  return (employee as Director).workDirectorTasks !== undefined;
+}
 
+function executeWork(employee: Teacher | Director) {
+  if (isDirector(employee)) {
+    return employee.workDirectorTasks();
+  } else {
+    return employee.workTeacherTasks();
+  }
+}
+
+// To help you correct bru
+const emp1 = new Director();
+const emp2 = new Teacher();
+console.log('task 6');
+console.log('expected : Getting to director tasks');
+console.log(executeWork(emp1));
+console.log('expected : Getting to work');
+console.log(executeWork(emp2));
+
+
+
+// ----------------- TASK 7 --------------
